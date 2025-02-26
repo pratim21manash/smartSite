@@ -1,0 +1,700 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif; /* Elegant, luxurious font */
+}
+
+body {
+    line-height: 1.6;
+    color: #2d2d2d; /* Dark charcoal for text */
+    background-color: #fdf6e9; /* Soft cream background */
+}
+
+/* Highlighted Text */
+.highlight {
+    color: orange; /* Rich gold for emphasis */
+    font-weight: 700;
+}
+
+/* Navigation */
+.navbar {
+    background: black; /* Charcoal gradient */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Section Styling */
+section {
+    padding: 6rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.content {
+    max-width: 600px;
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.image-placeholder {
+    width: 280px;
+    height: 430px;
+    display: flex;
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h2 {
+    color: #e4dbdb; /* Charcoal for headers */
+    margin-bottom: 1.5rem;
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #d4af37; /* Gold underline */
+}
+
+h3 {
+    color: #e4dbdb; /* Match h2 color */
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+p, li {
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    color: #f1e7e7; /* Softer charcoal for readability */
+}
+
+ul {
+    list-style: none;
+    margin-left: 1.5rem;
+}
+
+ul li::before {
+    content: "✨"; /* Subtle sparkle */
+    color: #d4af37;
+    margin-right: 12px;
+}
+
+/* Section Backgrounds */
+#hero { background: black; }
+#about { background-color: black; }
+#why-website { background-color: black; }
+#benefits { background-color: black; }
+#choose-us { background-color: black; }
+#testimonials { background-color: black; }
+#pricing { background-color: black; }
+#other-services { background-color: black; }
+#footer { background: black; color: #d4af37; }
+
+/* Button */
+.cta-btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: dodgerblue; /* Charcoal button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 1.5rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #d4af37; /* Gold border */
+}
+
+.cta-btn:hover {
+    background-color: #4a4a4a; /* Lighter charcoal */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Contact Form Styling */
+.contact-form-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 540px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #d4af37;
+}
+
+.contact-form h3 {
+    color: #2d2d2d;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a4a4a;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.9rem;
+    margin-bottom: 1.2rem;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Playfair Display', serif;
+    background-color: #fdf6e9;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #b8860b; /* Darker gold */
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 130px;
+    resize: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-btn, .close-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+}
+
+/* Pricing Section Specific Styling */
+#pricing {
+    background-color: black; /* Maintain consistent background */
+    padding: 6rem 2rem; /* Match other sections */
+}
+
+#pricing .content {
+    text-align: center;
+    max-width: 1000px; /* Prevent overflow */
+    margin: 0 auto;
+}
+
+.pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    max-width: 100%; /* Prevent overflow */
+}
+
+.pricing-card {
+    background: #38106d;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 300px;
+    min-width: 280px; /* Ensure cards don't shrink too much */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid #d4af37;
+    flex: 0 0 auto; /* Prevent flex growth/shrink issues */
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.highlight-card {
+    background: #4826a8;
+    position: relative;
+}
+
+.highlight-card::before {
+    content: "Most Popular";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d4af37;
+    color: #fff;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.pricing-card h3 {
+    color: #f5fcf7;
+    margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-card .price span {
+    font-size: 1rem;
+    color: #4a4a4a;
+}
+
+.pricing-card .equivalent {
+    color: #4a4a4a;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.pricing-card ul {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-card .cta-btn {
+    background: #d4af37;
+    color: #2d2d2d;
+    border: none;
+    width: 100%; /* Full width button within card */
+}
+
+.pricing-card .cta-btn:hover {
+    background: #b8860b;
+}
+
+/* Existing Media Queries */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+    .logo {
+        width: 220px;
+    }
+    .pricing-container {
+        gap: 1.5rem;
+    }
+    .pricing-card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.6rem 1rem;
+        height: 60px; /* Fixed height for consistency */
+    }
+    .logo {
+        width: 180px;
+        display: block; /* Ensure visibility */
+    }
+    section {
+        padding: 4rem 1rem;
+    }
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pricing-card {
+        width: 90%;
+        max-width: 340px;
+    }
+    .content {
+        margin-top: 60px; /* Adjust for fixed navbar */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem;
+        height: 50px;
+    }
+    .logo {
+        width: 140px;
+        display: block;
+        visibility: visible; /* Explicitly make logo visible */
+    }
+    section {
+        padding: 3rem 0.5rem;
+    }
+    .pricing-card {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    .pricing-card h3 {
+        font-size: 1.5rem;
+    }
+    .pricing-card .price {
+        font-size: 1.8rem;
+    }
+    .content {
+        margin-top: 50px;
+    }
+    #hero .content h2 {
+        font-size: 1.8rem;
+    }
+    #hero .content p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pricing-card {
+        width: 80%;
+        max-width: 400px;
+    }
+    .logo {
+        width: 200px;
+    }
+}
+
+/* Additional Media Queries for Enhanced Responsiveness */
+
+/* Large Tablets (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    section {
+        padding: 5rem 1.5rem;
+        gap: 3rem;
+    }
+    .content {
+        max-width: 500px;
+        padding: 1rem;
+    }
+    .image-placeholder {
+        width: 250px;
+        height: 380px;
+        margin-top: 80px;
+    }
+    h2 {
+        font-size: 2.4rem;
+    }
+    h3 {
+        font-size: 1.6rem;
+    }
+    p, li {
+        font-size: 1.05rem;
+    }
+    .cta-btn {
+        padding: 0.9rem 2.5rem;
+        font-size: 1.05rem;
+    }
+    .pricing-container {
+        gap: 1.8rem;
+    }
+    .pricing-card {
+        width: 290px;
+    }
+    .contact-form {
+        max-width: 500px;
+        padding: 2rem;
+    }
+}
+
+/* Tablets (481px - 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+    section {
+        padding: 4rem 1rem;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    .content {
+        max-width: 100%;
+        padding: 1rem;
+        margin-top: 60px;
+    }
+    .image-placeholder {
+        width: 300px;
+        height: 400px;
+        margin-top: 0;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    p, li {
+        font-size: 1rem;
+    }
+    ul {
+        margin-left: 0;
+    }
+    .cta-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .pricing-card {
+        width: 85%;
+        max-width: 360px;
+        padding: 1.8rem;
+    }
+    .contact-form {
+        width: 95%;
+        max-width: 450px;
+        padding: 2rem;
+    }
+    .contact-form h3 {
+        font-size: 1.8rem;
+    }
+    .contact-form input, .contact-form textarea {
+        padding: 0.8rem;
+    }
+}
+
+/* Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+    section {
+        padding: 3rem 0.5rem;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    .content {
+        max-width: 100%;
+        padding: 0.8rem;
+        margin-top: 50px;
+    }
+    .image-placeholder {
+        width: 100%;
+        max-width: 280px;
+        height: 350px;
+        margin-top: 0;
+    }
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    h2::after {
+        width: 40px;
+        height: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    h3 {
+        font-size: 1.4rem;
+    }
+    p, li {
+        font-size: 0.95rem;
+    }
+    ul {
+        margin-left: 0;
+    }
+    .cta-btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 200px;
+    }
+    .pricing-container {
+        gap: 1rem;
+    }
+    .pricing-card {
+        width: 100%;
+        max-width: 300px;
+        padding: 1.5rem;
+    }
+    .pricing-card h3 {
+        font-size: 1.4rem;
+    }
+    .pricing-card .price {
+        font-size: 1.6rem;
+    }
+    .pricing-card .equivalent {
+        font-size: 0.9rem;
+    }
+    .pricing-card ul {
+        margin-bottom: 1rem;
+    }
+    .contact-form {
+        width: 95%;
+        max-width: 340px;
+        padding: 1.5rem;
+    }
+    .contact-form h3 {
+        font-size: 1.6rem;
+    }
+    .contact-form label {
+        font-size: 1rem;
+    }
+    .contact-form input, .contact-form textarea {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+    .contact-form textarea {
+        height: 100px;
+    }
+    .form-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .submit-btn, .close-btn {
+        width: 100%;
+        padding: 0.7rem;
+    }
+}
+
+/* Very Small Mobile Devices (up to 360px) */
+@media (max-width: 360px) {
+    .navbar {
+        padding: 0.4rem;
+    }
+    .logo {
+        width: 120px;
+    }
+    section {
+        padding: 2.5rem 0.5rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    h3 {
+        font-size: 1.3rem;
+    }
+    p, li {
+        font-size: 0.9rem;
+    }
+    .image-placeholder {
+        height: 300px;
+    }
+    .cta-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    .pricing-card {
+        padding: 1.2rem;
+    }
+    .pricing-card h3 {
+        font-size: 1.3rem;
+    }
+    .pricing-card .price {
+        font-size: 1.5rem;
+    }
+    .contact-form {
+        padding: 1.2rem;
+    }
+    .contact-form h3 {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+.icon svg {
+    stroke: #666; /* Default color - adjust as needed */
+}
+
+/* Optional: Different colors for each icon */
+.contact-info p:nth-child(1) .icon svg {
+    stroke: #007bff; /* Blue for email */
+}
+
+.contact-info p:nth-child(2) .icon svg {
+    stroke: #E4405F; /* Instagram pink */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .icon {
+        margin-right: 5px;
+    }
+    
+    .icon svg {
+        width: 16px;
+        height: 16px;
+    }
+}
